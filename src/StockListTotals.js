@@ -1,0 +1,29 @@
+const numeral = require('numeral');
+
+function StockListItem(props) {
+  
+  const formatNumber = m => numeral(m).format('0,0.00');
+  
+  const { stocks } = props;
+  
+  const totals = stocks.reduce((summary, stock) => {
+    summary.profit += stock.profit;
+    summary.purchaseValue += stock.purchaseValue;
+    summary.currentValue += stock.currentValue;
+    return summary;
+  }, {currentValue: 0, purchaseValue: 0, profit: 0});
+  const profitClass = totals.profit < 0 ? 'loss' : 'profit';
+
+  return (
+    <tr>
+      <th>TOTALS</th>
+      <th colSpan="3">&nbsp;</th>
+      <th className="money">{formatNumber(totals.purchaseValue)}</th>
+      <th>&nbsp;</th>
+      <th className="money">{formatNumber(totals.currentValue)}</th>
+      <th className={"money "+profitClass}>{formatNumber(totals.profit)}</th>
+    </tr>
+  );
+}
+
+export default StockListItem;
