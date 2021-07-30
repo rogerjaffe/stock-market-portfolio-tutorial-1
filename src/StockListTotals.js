@@ -1,3 +1,5 @@
+import utilities from './utilities';
+
 const numeral = require('numeral');
 
 function StockListItem(props) {
@@ -18,10 +20,10 @@ function StockListItem(props) {
     <tr>
       <th>TOTALS</th>
       <th colSpan="3">&nbsp;</th>
-      <th className="money">{formatNumber(totals.purchaseValue)}</th>
+      <th className="money">{utilities.formatNumber(totals.purchaseValue)}</th>
       <th>&nbsp;</th>
-      <th className="money">{formatNumber(totals.currentValue)}</th>
-      <th className={"money "+profitClass}>{formatNumber(totals.profit)}</th>
+      <th className="money">{utilities.formatNumber(totals.currentValue)}</th>
+      <th className={"money "+profitClass}>{utilities.formatNumber(totals.profit)}</th>
     </tr>
   );
 }

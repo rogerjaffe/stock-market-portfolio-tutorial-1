@@ -1,17 +1,17 @@
+import utilities from './utilities';
+
 const numeral = require('numeral');
 
 function StockListItem(props) {
   
-  const formatNumber = m => numeral(m).format('0,0.00');
-  
   const { stock } = props;
-  const purchaseValueStr = formatNumber(stock.purchaseValue);
-  const currentValueStr = formatNumber(stock.currentValue);
+  const purchaseValueStr = utilities.formatNumber(stock.purchaseValue);
+  const currentValueStr = utilities.formatNumber(stock.currentValue);
   
-  const purchasePriceStr = formatNumber(stock.purchasePrice);
-  const currentPriceStr = formatNumber(stock.currentPrice);
+  const purchasePriceStr = utilities.formatNumber(stock.purchasePrice);
+  const currentPriceStr = utilities.formatNumber(stock.currentPrice);
   
-  const profitStr = formatNumber(stock.profit);
+  const profitStr = utilities.formatNumber(stock.profit);
   const profitClass = stock.profit < 0 ? 'loss' : 'profit';
   
   return (
