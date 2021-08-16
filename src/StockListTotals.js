@@ -4,8 +4,6 @@ const numeral = require('numeral');
 
 function StockListItem(props) {
   
-  const formatNumber = m => numeral(m).format('0,0.00');
-  
   const { stocks } = props;
   
   const totals = stocks.reduce((summary, stock) => {
