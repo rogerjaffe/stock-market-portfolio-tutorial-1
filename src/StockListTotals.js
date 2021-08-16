@@ -2,7 +2,7 @@ import utilities from './utilities';
 
 const numeral = require('numeral');
 
-function StockListItem(props) {
+function StockListTotals(props) {
   
   const { stocks } = props;
   
@@ -26,4 +26,4 @@ function StockListItem(props) {
   );
 }
 
-export default StockListItem;
+export default StockListTotals;
