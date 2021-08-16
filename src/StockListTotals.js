@@ -1,7 +1,5 @@
 import utilities from './utilities';
 
-const numeral = require('numeral');
-
 function StockListTotals(props) {
   
   const { stocks } = props;
